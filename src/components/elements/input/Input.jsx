@@ -1,10 +1,10 @@
 import { useContext } from "react"
-import { SignUpContext } from "../../../pages/SignUp"
+import { MessageContext } from "../../../pages/FormFunction"
 
 
 function Input({type, name, placeholder}){
     
-    const {setUsername, setEmail, setPassword} = useContext(SignUpContext)
+    const {setUsername, setEmail, setPassword} = useContext(MessageContext)
 
     const inputStyle = 'px-2 py-1 w-full border rounded-md focus:outline-none focus:ring focus:ring-lime-100 '
 

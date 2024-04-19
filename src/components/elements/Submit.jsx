@@ -1,8 +1,8 @@
 import { useContext } from "react"
-import { SignUpContext } from "../../pages/SignUp"
+import { MessageContext } from "../../pages/FormFunction"
 
 function Submit(){
-    const {preventDef} = useContext(SignUpContext)
+    const {preventDef} = useContext(MessageContext)
     const submitStyle = 'border rounded-md py-1 px-4 mt-3 mb-4 bg-lime-400 font-semibold' 
 
     return(

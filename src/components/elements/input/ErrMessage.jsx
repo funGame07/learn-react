@@ -1,8 +1,8 @@
 import { useContext } from "react"
-import { SignUpContext } from "../../../pages/SignUp"
+import { MessageContext } from "../../../pages/FormFunction"
 
 function ErrMessage({name}){
-    const {usernameErr, emailErr, passwordErr} = useContext(SignUpContext)
+    const {usernameErr, emailErr, passwordErr} = useContext(MessageContext)
     const errStyle = 'block text-sm text-red-500'
 
     const ErrMessage =  name === 'username' ? usernameErr :
