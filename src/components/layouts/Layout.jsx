@@ -20,10 +20,17 @@ function Layout({children, action, title}){
 function Navigation({action}){
     //todo : conditional rendering
     return(
-        <div className="max-w-xs flex flex-col items-center mt-2">
-            <span className="block text-center text-neutral-500"> Already have an account?</span>
-            <Link to="/login" className="italic underline text-lime-400">Login</Link>
-        </div>
+        <>
+            {action === '/signup' &&(<div className="max-w-xs flex flex-col items-center mt-2">
+                                        <span className="block text-center text-neutral-500"> Already have an account?</span>
+                                        <Link to="/login" className="italic underline text-lime-400">Login</Link>
+                                    </div>)}
+
+            {action === '/login' &&(<div className="max-w-xs flex flex-col items-center mt-2">
+                                        <span className="block text-center text-neutral-500">Don't have an account?</span>
+                                        <Link to="/signup" className="italic underline text-lime-400">SignUp for free</Link>
+                                    </div>)}
+        </>
     )
 }
 
