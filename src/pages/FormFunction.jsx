@@ -17,7 +17,8 @@ function FormFunction({action}){
 
     function preventDef(e){
         e.preventDefault()
-        setSubmit(submit + 1)
+        fetchApi()
+        // setSubmit(submit + 1)
     }
 
     async function fetchApi(){
@@ -41,10 +42,9 @@ function FormFunction({action}){
         }
     }   
 
-    useEffect(() =>{
-        if(submit) fetchApi()
-        console.log(submit)
-    }, [submit])
+    // useEffect(() =>{
+    //     fetchApi()
+    // }, [submit])
 
     const sendContext = {
         preventDef,
