@@ -1,8 +1,7 @@
 import FormFunction from "./FormFunction"
 
 
-function SignUp({}){
-
+function SignUp(){
     return(
         <FormFunction action="signup"/>
     )

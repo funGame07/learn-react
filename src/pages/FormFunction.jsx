@@ -57,18 +57,19 @@ function FormFunction({action}){
     }
 
     return(
+        <>
+            {action === 'signup' && (<MessageContext.Provider value={sendContext}>
+                                        <Layout action='/signup' title='Sign Up'>
+                                            <SignUpForm /> 
+                                        </Layout>
+                                    </MessageContext.Provider>) }
 
-        // <MessageContext.Provider value={sendContext}>
-        //     <Layout action='/login' title="Login">
-        //         <LoginForm />
-        //     </Layout>
-        // </MessageContext.Provider>
-
-        <MessageContext.Provider value={sendContext}>
-            <Layout action='/signup' title='Sign Up'>
-                <SignUpForm /> 
-            </Layout>
-        </MessageContext.Provider>
+            {action === 'login' && (<MessageContext.Provider value={sendContext}>
+                                        <Layout action='/login' title="Login">
+                                            <LoginForm />
+                                        </Layout>
+                                    </MessageContext.Provider>) }
+        </>
     )
 }
 
