@@ -40,7 +40,19 @@ function FormFunction({action}){
         if(data.success === true){
             location.assign('/protected')
         }
-    }   
+    } 
+    
+    // async function googleLogin(){
+    //     await fetch("http://localhost:3000/login/google",{
+    //         credentials: 'include',
+    //         mode: 'no-cors'
+    //     })
+    //     location.assign('/protected')
+    // }
+
+    async function googleLogin(){
+        window.open('http://localhost:3000/login/google', '_blank', "width=400,height=400")
+    }
 
     // useEffect(() =>{
     //     fetchApi()
@@ -59,13 +71,13 @@ function FormFunction({action}){
     return(
         <>
             {action === 'signup' && (<MessageContext.Provider value={sendContext}>
-                                        <Layout action='/signup' title='Sign Up'>
+                                        <Layout action='/signup' title='Sign Up' googleLogin={googleLogin}>
                                             <SignUpForm /> 
                                         </Layout>
                                     </MessageContext.Provider>) }
 
             {action === 'login' && (<MessageContext.Provider value={sendContext}>
-                                        <Layout action='/login' title="Login">
+                                        <Layout action='/login' title="Login" googleLogin={googleLogin}>
                                             <LoginForm />
                                         </Layout>
                                     </MessageContext.Provider>) }

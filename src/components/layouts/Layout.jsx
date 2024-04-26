@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import Submit from "../elements/Submit"
 import { MessageContext } from "../../pages/FormFunction"
 
-function Layout({children, action, title}){
+function Layout({children, action, title, googleLogin}){
     const {preventDef} = useContext(MessageContext)
     return(
         <div className="w-screen h-screen flex flex-col justify-center items-center">
@@ -15,6 +15,7 @@ function Layout({children, action, title}){
                 </form>
             </div>
             <Navigation action={action}/>
+            <a onClick={()=> googleLogin()}>Google</a>
         </div>
     )
 }
